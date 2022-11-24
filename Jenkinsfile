@@ -58,7 +58,7 @@ pipeline{
                     
             }
         }
-        stage('Quality Gate Status'){
+        /* stage('Quality Gate Status'){
                 
             steps{
                     
@@ -67,7 +67,16 @@ pipeline{
                         waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
                     }
                 }
+        } */
+        stage('Upload Jar to Nexus Repo'){
+                
+            steps{
+                
+                script{
+                    nexusArtifactUploader artifacts: [[artifactId: 'springboot', classifier: '', file: 'target/Uber.jar', type: 'jar']], credentialsId: '', groupId: 'com.example', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'DevOpsProject1-release', version: '1.0.0'
+                }
             }
-        }
+        }   
+    }       
         
 }
