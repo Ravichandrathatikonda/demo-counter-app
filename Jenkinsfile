@@ -52,7 +52,10 @@ pipeline{
                     
                     withSonarQubeEnv(credentialsId: 'sonar-token') {
                         
-                        bat 'mvn clean package sonar:sonar \ -Dsonar.projectKey=com.example:springboot \ -Dsonar.host.url=http://localhost:9000 \ -Dsonar.login=8fab3ebf976b8cc8d20cdebf87cd6e81c5b7cfca'
+                        bat 'mvn clean package sonar:sonar \
+  -Dsonar.projectKey=com.example:springboot \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=8fab3ebf976b8cc8d20cdebf87cd6e81c5b7cfca'
                     }
                 }
                     
