@@ -87,9 +87,9 @@ pipeline{
             steps{
                 
                 script{
-                     bat 'docker build -t %JOB_NAME%:v1.%BUILD_ID% .'
-                     bat 'docker image tag %JOB_NAME%:v1.%BUILD_ID% ravichandra0702/%JOB_NAME%:v1.%BUILD_ID%'
-                     bat 'docker image tag %JOB_NAME%:v1.%BUILD_ID% ravichandra0702/%JOB_NAME%:latest'
+                     bat 'docker build -t devopsproject1:v1.%BUILD_ID% .'
+                     bat 'docker image tag devopsproject1:v1.%BUILD_ID% ravichandra0702/devopsproject1:v1.%BUILD_ID%'
+                     bat 'docker image tag devopsproject1:v1.%BUILD_ID% ravichandra0702/devopsproject1:latest'
                 }
             }
         }
